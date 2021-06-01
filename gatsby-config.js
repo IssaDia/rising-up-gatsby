@@ -2,41 +2,11 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: "Rising Up",
+    siteUrl: `https://www.example.com`,
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        query: `
-        {
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
-            nodes {
-              ... on WpPost {
-                uri
-                modifiedGmt
-              }
-              ... on WpPage {
-                uri
-                modifiedGmt
-              }
-            }
-          }
-        }
-      `,
-        serialize: ({ path, modifiedGmt }) => {
-          return {
-            url: path,
-            lastmod: modifiedGmt,
-          }
-        },
-      },
-    },
+      resolve: "gatsby-plugin-sitemap"},
     {
       resolve: "gatsby-source-contentful",
       options: {
