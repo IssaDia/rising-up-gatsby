@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: "Rising Up",
@@ -6,8 +8,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "Bufg_RmQdHF7WaLbYT4mcbY8TLO--PTTMrLcHDLGscQ",
-        spaceId: "995qgjlxbwav",
+        accessToken: process.env.GATSBY_ACCESS_TOKEN,
+        spaceId: process.env.GATSBY_SPACE_ID,
       },
     },
     "gatsby-plugin-gatsby-cloud",
