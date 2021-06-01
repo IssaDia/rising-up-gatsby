@@ -5,7 +5,6 @@ module.exports = {
     title: "Rising Up",
   },
   plugins: [
-    [`gatsby-plugin-sitemap`],
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -13,6 +12,7 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     {
