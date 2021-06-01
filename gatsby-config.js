@@ -5,6 +5,7 @@ module.exports = {
     title: "Rising Up",
   },
   plugins: [
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-contentful",
       options: {
