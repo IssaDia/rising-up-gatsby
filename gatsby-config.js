@@ -31,7 +31,7 @@ module.exports = {
       `,
       resolveSiteUrl: () => siteUrl,
         resolvePages: ({
-          allSitePage: { nodes: allPages },
+         
           allWpContentNode: { nodes: allWpNodes },
         }) => {
           const wpNodeMap = allWpNodes.reduce((acc, node) => {
