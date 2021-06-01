@@ -29,22 +29,6 @@ module.exports = {
           }
         }
       `,
-      resolveSiteUrl: () => siteUrl,
-        resolvePages: ({
-         
-          allWpContentNode: { nodes: allWpNodes },
-        }) => {
-          const wpNodeMap = allWpNodes.reduce((acc, node) => {
-            const { uri } = node
-            acc[uri] = node
-
-            return acc
-          }, {})
-
-          return allPages.map(page => {
-            return { ...page, ...wpNodeMap[page.path] }
-          })
-        },
         serialize: ({ path, modifiedGmt }) => {
           return {
             url: path,
