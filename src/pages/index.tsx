@@ -1,6 +1,7 @@
-import * as React from "react"
+import * as React from 'react'
 
 const IndexPage = () => {
+  let title = 5
   return (
     <main>
       <title>Home Page</title>
@@ -12,8 +13,8 @@ const IndexPage = () => {
           🎉🎉🎉
         </span>
       </h1>
-      </main>
-     
+    </main>
+
   )
 }
 
