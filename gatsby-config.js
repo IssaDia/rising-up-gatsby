@@ -1,12 +1,35 @@
-require('dotenv').config()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
     siteUrl: `https://risingup80349.gatsbyjs.io`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
-      resolve: "gatsby-plugin-sitemap"},
+      resolve: "gatsby-plugin-sitemap",
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -43,6 +66,18 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
     },
   ],
 };

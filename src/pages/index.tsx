@@ -1,21 +1,12 @@
-import * as React from 'react'
+import * as React from "react";
+import Layout from "../components/Layout";
 
-const IndexPage = () => {
-  let title = 5
+const IndexPage: React.FC = () => {
   return (
-    <main>
-      <title>Home Page</title>
-      <h1>
-        Congratulations
-        <br />
-        <span>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-    </main>
+    <Layout>
+      <div>Index page</div>
+    </Layout>
+  );
+};
 
-  )
-}
-
-export default IndexPage
+export default IndexPage;
