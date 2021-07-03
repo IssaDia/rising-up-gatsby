@@ -1,9 +1,12 @@
 # ./Dockerfile.dev
-
-FROM node
-WORKDIR /myapp
-COPY ./package.json .
+FROM node:alpine
+RUN apk add --no-cache autoconf
+WORKDIR /app
+# COPY the package.json file, update any deps and install them
+COPY package.json .
+RUN npm update
 RUN npm install
+# copy the whole source folder(the dir is relative to the Dockerfile
 COPY . .
-EXPOSE 8000
-CMD ["npm", "start"]
+
+CMD [ "npm", "run", "start" ]
