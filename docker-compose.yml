@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/app/src # Links the source files to the running container
+      - .:/app/src # Links the source files to the running container
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/
     ports:
       - "3000:8000"

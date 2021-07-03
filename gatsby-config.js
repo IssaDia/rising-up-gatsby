@@ -56,6 +56,7 @@ module.exports = {
       options: {
         name: "images",
         path: "./src/images/",
+        ignore: ["**/.*"],
       },
       __key: "images",
     },
@@ -77,6 +78,12 @@ module.exports = {
           emitWarning: true,
           failOnError: false,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
       },
     },
   ],
