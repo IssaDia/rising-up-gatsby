@@ -1,6 +1,7 @@
 import React from "react";
+import "../styles/tailwind.css";
 import Footer from "./Footer";
-import Nav from "./Nav";
+import Navbar from "./Nav/Navbar";
 import PropTypes from "prop-types";
 
 const Layout: React.FC = ({ children }) => {
@@ -8,8 +9,9 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <div className="container mx-auto">
-        <Nav />
+        <Navbar />
         <main>{children}</main>
+        <h1 className="">hello</h1>
         <Footer />
       </div>
     </>
